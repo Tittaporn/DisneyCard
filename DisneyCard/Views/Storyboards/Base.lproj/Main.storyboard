@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AXV-Lf-NmH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Collection View Controller-->
+        <scene sceneID="w6l-mZ-owa">
+            <objects>
+                <collectionViewController id="aS6-PF-NWm" customClass="CardCollectionViewController" customModule="DisneyCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="J32-oY-tOC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vDy-Tt-h63">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell" id="lIa-Um-a07" customClass="CharacterCollectionViewCell" customModule="DisneyCard" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6nD-GL-PrO">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2a2-5s-mOz">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="2a2-5s-mOz" secondAttribute="height" multiplier="1:1" id="Glm-B0-Cdt"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2a2-5s-mOz" firstAttribute="leading" secondItem="6nD-GL-PrO" secondAttribute="leading" id="D7A-ql-Eah"/>
+                                        <constraint firstAttribute="trailing" secondItem="2a2-5s-mOz" secondAttribute="trailing" id="ZqR-g1-n5C"/>
+                                        <constraint firstAttribute="bottom" secondItem="2a2-5s-mOz" secondAttribute="bottom" id="eb8-Bx-Xu8"/>
+                                        <constraint firstItem="2a2-5s-mOz" firstAttribute="top" secondItem="6nD-GL-PrO" secondAttribute="top" id="mHf-8I-iiS"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="charImageView" destination="2a2-5s-mOz" id="5k6-g8-bDs"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="aS6-PF-NWm" id="iUu-Aa-d4b"/>
+                            <outlet property="delegate" destination="aS6-PF-NWm" id="0bz-NF-uwH"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="zHr-8S-4ya">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="1Nk-Ao-XQv">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="toFilterVC" id="5zc-2c-DaT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRd-oM-Yaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486.95652173913049" y="-60.267857142857139"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FilterViewController" customModule="DisneyCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5mh-zL-58k">
+                                <rect key="frame" x="100" y="200" width="214" height="408"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEn-dw-41l">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="194"/>
+                                        <state key="normal" image="heroes"/>
+                                        <connections>
+                                            <action selector="heroButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZT-ON-Eso"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHJ-tL-PrT">
+                                        <rect key="frame" x="0.0" y="214" width="214" height="194"/>
+                                        <state key="normal" title="Villains" image="villains"/>
+                                        <connections>
+                                            <action selector="villainsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fbe-dZ-0qV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5mh-zL-58k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="850-rz-Tzl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5mh-zL-58k" secondAttribute="trailing" constant="100" id="AeW-hy-Now"/>
+                            <constraint firstItem="5mh-zL-58k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Cjj-fB-9Nt"/>
+                            <constraint firstItem="5mh-zL-58k" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j7v-zs-TX9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5mh-zL-58k" secondAttribute="bottom" constant="200" id="mba-v1-qVy"/>
+                            <constraint firstItem="5mh-zL-58k" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tsF-bm-url"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279.7101449275362" y="-76.339285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="naI-WD-7vz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AXV-Lf-NmH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFm-4s-2Hy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aS6-PF-NWm" kind="relationship" relationship="rootViewController" id="rLl-GJ-qU1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcR-cV-6BH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-423.1884057971015" y="-60.267857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heroes" width="1500" height="820"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <image name="villains" width="300" height="276"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
