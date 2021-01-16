@@ -22,11 +22,11 @@ class CardCollectionViewController: UICollectionViewController {
     // MARK: - Helper Fuctions
     func shufferCharacter(faction: String) {
         if faction == "heros" {
-            let heroGroup = CharacterController.heros.prefix(5)
+            let heroGroup = CharacterController.heros.prefix(3)
             displayedCharecters = Array(heroGroup)
             targetCharecter = CharacterController.heros.randomElement()
         } else  {
-            let villainGroup =  CharacterController.villains.prefix(5)
+            let villainGroup =  CharacterController.villains.prefix(3)
             displayedCharecters = Array(villainGroup)
             targetCharecter = CharacterController.villains.randomElement()
         }
@@ -44,7 +44,6 @@ class CardCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toFilterVC" {
             let destination = segue.destination as? FilterViewController
-            
             destination?.delegate = self
         }
     }
@@ -97,8 +96,8 @@ extension CardCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width / 2
-        let heigth = view.frame.height / 3
-        return CGSize(width: width, height: heigth)
+        let heigth = view.frame.height / 2
+        return CGSize(width: width - 20, height: heigth - 20)
     }
 }
 
