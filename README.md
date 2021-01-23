@@ -5,3 +5,8 @@ Build your own app. This app must use the protocol-delegate communication patter
 
 ## Disney Card Game
 A Disney Card Game designed to see if you know your sith vs jedi. Learning Objectives: Alert Controllers, Protocol/Delegate communication pattern, and an introduction to UICollectionView
+
+![Screen Shot 2021-01-23 at 1 42 06 AM](https://user-images.githubusercontent.com/57606580/105572465-e9eca680-5d1c-11eb-8992-a3ec526ff139.png)
+![Screen Shot 2021-01-23 at 1 42 15 AM](https://user-images.githubusercontent.com/57606580/105572466-ea853d00-5d1c-11eb-8410-c5b39c232f04.png)
+
+
